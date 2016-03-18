@@ -6,11 +6,12 @@ config = {
     host:'localhost',
     port:'8000',
     env:'local',
-    staticPath:'//localhost:8800/build',
+    staticPath:'//localhost:8000/build',
     hashLength:'10',
     watchFiles:[src + '/less/**/*.less',src + '/js/**/*js',src + '/html/**/*.html',src + '/fonts/**/*',src + '/img/**/*',src + '/tpl/**/*.html'],
     htmlPath:'src/html/',
     htmlOutputPath:'build/html/',
+    spriteOutPut:'dist/',
     less:{
         src:src + '/less/**',
         build:build + '/css'
@@ -34,7 +35,14 @@ config = {
     tpl:{
         src:src + '/tpl',
         build: src + '/js/_tpl'
+    },
+    sprite:{
+        src:src + '/sprite',
+        build:'../img/sprite',
+        outPutBuild:build + '/img/sprite',
+        lessOutputPath:src + '/less/sprite'
     }
+
 }
 
 

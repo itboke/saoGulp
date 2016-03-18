@@ -11,6 +11,7 @@ var config = require('../config');
 var Helper = require('./helper');
 var html = require('./html');
 var tpl = require('./tpl');
+var sprite = require('./sprite');
 var color = log.colors;
 
 main = {
@@ -68,6 +69,11 @@ main = {
                 callback && callback();
             });
     },
+    sprite:function(callback){
+        console.log('构建雪碧图开始......');
+        sprite(callback);
+        //callback && callback();
+    },
     watch:function(){
         var _self = this;
         watch(config.watchFiles,function(file){
@@ -85,7 +91,6 @@ main = {
                     if(imgArr.indexOf(type) != '-1'){
                         type = 'img';
                     }*/
-                    //console.log(type);
                     switch(type){
                         case 'less':
                             _self.less();

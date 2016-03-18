@@ -52,7 +52,9 @@ gulp.task('local',function(){
         mainBuild.html(function(){
           mainBuild.fonts(function(){
             mainBuild.tpl(function(){
-              gulp.start(['watch','server']);
+              mainBuild.sprite(function(){
+                gulp.start(['watch','server']);
+              })
             })
           });
         });

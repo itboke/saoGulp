@@ -22,6 +22,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-cssshrink": "^0.1.5",
     "gulp-file-include": "^0.13.7",
+    "gulp-if": "^2.0.0",
     "gulp-less": "^3.0.5",
     "gulp-livereload": "^3.8.1",
     "gulp-qn": "^0.1.1",
@@ -32,6 +33,7 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "gulp-webpack": "^1.5.0",
+    "gulp.spritesmith": "^6.2.0",
     "run-sequence": "^1.1.5",
     "tiny-lr": "^0.2.1",
     "webpack": "^1.12.14"
