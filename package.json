@@ -1,0 +1,39 @@
+{
+  "name": "learning-gulp",
+  "version": "0.0.0",
+  "description": "learing gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/demohi/learning-gulp.git"
+  },
+  "author": "mdemo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/demohi/learning-gulp/issues"
+  },
+  "homepage": "https://github.com/demohi/learning-gulp",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssshrink": "^0.1.5",
+    "gulp-file-include": "^0.13.7",
+    "gulp-less": "^3.0.5",
+    "gulp-livereload": "^3.8.1",
+    "gulp-qn": "^0.1.1",
+    "gulp-rev": "^3.0.1",
+    "gulp-rev-collector": "^0.1.4",
+    "gulp-server-livereload": "^1.7.3",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "gulp-webpack": "^1.5.0",
+    "run-sequence": "^1.1.5",
+    "tiny-lr": "^0.2.1",
+    "webpack": "^1.12.14"
+  }
+}
