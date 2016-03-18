@@ -1,0 +1,1 @@
+define(function(){return {"details":"<strong><title>hello,world,ddddddddddd</title></strong>"};});

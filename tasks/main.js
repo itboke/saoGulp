@@ -10,6 +10,7 @@ var watch = require('gulp-watch');
 var config = require('../config');
 var Helper = require('./helper');
 var html = require('./html');
+var tpl = require('./tpl');
 var color = log.colors;
 
 main = {
@@ -55,8 +56,9 @@ main = {
                 callback && callback();
             });
     },
-    tpl:function(){
-
+    tpl:function(callback){
+        console.log('开始构建tpl.html--到---tpl.js');
+        tpl(callback);
     },
     img:function(callback){
         console.log('图片复制中......');
@@ -79,10 +81,10 @@ main = {
                     //获取改变的文件的类型
                     var type = Helper.getFileType(filePath);
                     //判断字体和图片
-                    var imgArr = ['jpg','png','gif','svg'];
+                    /*var imgArr = ['jpg','png','gif','svg'];
                     if(imgArr.indexOf(type) != '-1'){
                         type = 'img';
-                    }
+                    }*/
                     //console.log(type);
                     switch(type){
                         case 'less':
@@ -96,6 +98,9 @@ main = {
                             break;
                         case 'img':
                             _self.img();
+                            break;
+                        case 'tpl':
+                            _self.tpl();
                             break;
                     }
                 }

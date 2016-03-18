@@ -8,7 +8,7 @@ config = {
     env:'local',
     staticPath:'//localhost:8800/build',
     hashLength:'10',
-    watchFiles:[src + '/less/**/*.less',src + '/js/**/*js',src + '/html/**/*.html',src + '/fonts/**/*',src + '/img/**/*'],
+    watchFiles:[src + '/less/**/*.less',src + '/js/**/*js',src + '/html/**/*.html',src + '/fonts/**/*',src + '/img/**/*',src + '/tpl/**/*.html'],
     htmlPath:'src/html/',
     htmlOutputPath:'build/html/',
     less:{
@@ -30,6 +30,10 @@ config = {
     fonts:{
         src:src + '/fonts/**/*',
         build:build + '/fonts'
+    },
+    tpl:{
+        src:src + '/tpl',
+        build: src + '/js/_tpl'
     }
 }
 

@@ -51,7 +51,9 @@ gulp.task('local',function(){
       mainBuild.js(function(){
         mainBuild.html(function(){
           mainBuild.fonts(function(){
-            gulp.start(['watch','server']);
+            mainBuild.tpl(function(){
+              gulp.start(['watch','server']);
+            })
           });
         });
       });
