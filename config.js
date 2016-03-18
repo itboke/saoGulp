@@ -4,11 +4,13 @@ var dist = './dist';
 config = {
     root:process.env.INIT_CWD,
     host:'localhost',
-    post:'8000',
+    port:'8000',
     env:'local',
     staticPath:'//localhost:8800/build',
     hashLength:'10',
     watchFiles:[src + '/less/**/*.less',src + '/js/**/*js',src + '/html/**/*.html',src + '/fonts/**/*',src + '/img/**/*'],
+    htmlPath:'src/html/',
+    htmlOutputPath:'build/html/',
     less:{
         src:src + '/less/**',
         build:build + '/css'
