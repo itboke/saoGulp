@@ -31,7 +31,9 @@ var replaceHtmlImgPath = function(resource){
 
 var buildHtml = function(data){
 
+
   var filePath = String(data.path).replace(/\\/g,'/');
+  console.log(filePath)
   //console.log(filePath);
   //过滤_目录下的文件
   if(filePath.indexOf(config.htmlPath + '_') > -1){
@@ -41,6 +43,8 @@ var buildHtml = function(data){
   var outputPath = path.join(config.root,config.htmlOutputPath,fileName);
   var resource = String(data.contents);
   resource = replaceHtmlImgPath(resource);
+  //构建新建的文件目录
+  Helper.mkdirsSync(path.dirname(outputPath));
   fs.writeFileSync(outputPath,resource,"utf-8");
 
   //输出提示
