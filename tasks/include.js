@@ -127,7 +127,21 @@ module.exports = function(options) {
                 } else {
                     _name = _val + "?v=" + cacheStr;
                 }
-                _str += '<script src="' + js_path + _name + '" id="' + tempArr[i].replace('.js', '') + '"></script>' + '\n';
+                //如果是核心JS模块
+                if(_val.indexOf('coreLibs') === 0){
+                    _str += '<script src="' + config.coreJs.seaJs + '.js?t=' + cacheStr + '"></script>' + '\n';
+                    _str += '<script src="' + config.coreJs.jquery + '.js?t=' + cacheStr + '"></script>' + '\n';
+                    _str += '<script src="' + config.coreJs.avalon + '.js?t=' + cacheStr + '"></script>' + '\n';
+                }else{
+                    var _jsPath = '';
+                    if(_val.indexOf('_') > -1){
+                        _jsPath = _val.split('_').join('/').substr(0);
+                    }else{
+                        _jsPath = _val;
+                    }
+                    _str += '<script src="' + js_path + _jsPath + '?t=' + cacheStr + '"></script>' + '\n';
+                }
+
             }
         };
         return _str;

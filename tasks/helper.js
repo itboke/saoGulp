@@ -16,7 +16,7 @@ var helper = {
     },
     //获取监控下文件修改的类型
     getFileType:function(filePath){
-        var typeList = ['src/less','src/js','src/img','src/html','src/tpl'];
+        var typeList = ['src/less','src/js','src/img','src/html','src/tpl','src/sprite'];
         var fileDirName = path.dirname(filePath);
         var type = '';
         typeList.map(function(value){

@@ -1,3 +1,4 @@
+/* 雪碧图构建 */
 var gulp=require("gulp");
 var spritesmith=require('gulp.spritesmith');
 var config = require('../config');

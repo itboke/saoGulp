@@ -91,6 +91,7 @@ main = {
                     if(imgArr.indexOf(type) != '-1'){
                         type = 'img';
                     }*/
+                    console.log(type);
                     switch(type){
                         case 'less':
                             _self.less();
@@ -106,6 +107,9 @@ main = {
                             break;
                         case 'tpl':
                             _self.tpl();
+                            break;
+                        case 'sprite':
+                            _self.sprite();
                             break;
                     }
                 }
