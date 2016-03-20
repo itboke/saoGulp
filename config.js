@@ -11,6 +11,7 @@ config = {
     hashLength:'10',
     watchFiles:[src + '/less/**/*.less',src + '/js/**/*js',src + '/html/**/*.html',src + '/fonts/**/*',src + '/img/**/*',src + '/tpl/**/*.html',src + '/sprite/**/*'],
     htmlPath:'src/html/',
+    jsAppPath:'src/js/app/',
     htmlOutputPath:'build/html/',
     spriteOutPut:'dist/',
     less:{

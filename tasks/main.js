@@ -12,6 +12,7 @@ var Helper = require('./helper');
 var html = require('./html');
 var tpl = require('./tpl');
 var sprite = require('./sprite');
+var jsCombine = require('./js');
 var color = log.colors;
 
 main = {
@@ -32,11 +33,7 @@ main = {
     },
     js:function(callback){
         console.log('开始构建js......');
-        gulp.src(config.js.src)
-        .pipe(gulp.dest(config.js.build)).on('end',function(){
-            console.log('js构建完成!');
-            callback && callback();
-        });
+        jsCombine(callback);
     },
     html:function(file,callback){
         var _file = config.html.src;

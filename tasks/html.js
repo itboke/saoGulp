@@ -33,7 +33,6 @@ var buildHtml = function(data){
 
 
   var filePath = String(data.path).replace(/\\/g,'/');
-  console.log(filePath)
   //console.log(filePath);
   //过滤_目录下的文件
   if(filePath.indexOf(config.htmlPath + '_') > -1){

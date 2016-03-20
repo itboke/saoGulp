@@ -1,7 +1,6 @@
 /**
- * learning-gulp - gulpfile.js
- * Created by mengdesen on 15/4/14.
- * Last modified by nieweidong on 2015/04/15
+ * saoGulp - gulpfile.js
+ * Created by hzl
  */
 
 'use strict';
@@ -9,16 +8,16 @@
 
 
 var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var shrink = require('gulp-cssshrink');
+//var uglify = require('gulp-uglify');
+//var concat = require('gulp-concat');
+//var shrink = require('gulp-cssshrink');
 var setting = require('./config');
 var mainBuild = require('./tasks/main');
 
 // MD5戳
-var rev = require('gulp-rev');
-var revCollector = require('gulp-rev-collector');
-var runSequence = require('run-sequence');
+//var rev = require('gulp-rev');
+//var revCollector = require('gulp-rev-collector');
+//var runSequence = require('run-sequence');
 
 
 //监控

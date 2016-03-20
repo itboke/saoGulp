@@ -1,26 +1,29 @@
 {
-  "name": "learning-gulp",
-  "version": "0.0.0",
-  "description": "learing gulp",
+  "name": "sao-gulp",
+  "version": "1.0.0",
+  "description": "sao gulp",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/demohi/learning-gulp.git"
+    "url": "https://github.com/itboke/saoGulp.git"
   },
-  "author": "mdemo",
+  "author": "hzl",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/demohi/learning-gulp/issues"
+    "url": "https://github.com/itboke/saoGulp/issues"
   },
-  "homepage": "https://github.com/demohi/learning-gulp",
+  "homepage": "https://github.com/itboke/saoGulp",
   "devDependencies": {
     "browser-sync": "^2.11.1",
-    "gulp": "^3.8.11",
+    "concat-stream": "^1.5.1",
+    "event-stream": "^3.3.2",
+    "gulp": "^3.9.1",
+    "gulp-cmd-pack": "^1.0.6",
     "gulp-concat": "^2.6.0",
-    "gulp-cssshrink": "^0.1.5",
+    "gulp-cssshrink": "^0.1.6",
     "gulp-file-include": "^0.13.7",
     "gulp-if": "^2.0.0",
     "gulp-less": "^3.0.5",
@@ -28,12 +31,15 @@
     "gulp-qn": "^0.1.1",
     "gulp-rev": "^3.0.1",
     "gulp-rev-collector": "^0.1.4",
+    "gulp-seajs-combo": "^1.2.3",
     "gulp-server-livereload": "^1.7.3",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "gulp-webpack": "^1.5.0",
-    "gulp.spritesmith": "^6.2.0",
+    "gulp.spritesmith": "^6.2.1",
+    "lodash": "^4.6.1",
+    "merge": "^1.2.0",
     "run-sequence": "^1.1.5",
     "tiny-lr": "^0.2.1",
     "webpack": "^1.12.14"
