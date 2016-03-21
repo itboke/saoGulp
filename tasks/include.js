@@ -132,6 +132,7 @@ module.exports = function(options) {
                     _str += '<script src="' + config.coreJs.seaJs + '.js?t=' + cacheStr + '"></script>' + '\n';
                     _str += '<script src="' + config.coreJs.jquery + '.js?t=' + cacheStr + '"></script>' + '\n';
                     _str += '<script src="' + config.coreJs.avalon + '.js?t=' + cacheStr + '"></script>' + '\n';
+                    _str += '<script>'+ config.seajsConfig +'</script>';
                 }else{
                     var _jsPath = '';
                     if(_val.indexOf('_') > -1){

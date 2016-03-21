@@ -11,6 +11,7 @@ config = {
     hashLength:'10',
     watchFiles:[src + '/less/**/*.less',src + '/js/**/*js',src + '/html/**/*.html',src + '/fonts/**/*',src + '/img/**/*',src + '/tpl/**/*.html',src + '/sprite/**/*'],
     htmlPath:'src/html/',
+    jsAppPath:'src/js/app/',
     htmlOutputPath:'build/html/',
     spriteOutPut:'dist/',
     less:{
@@ -23,7 +24,8 @@ config = {
     },
     js:{
         src:src + '/js/**/*.js',
-        build:build + '/js'
+        build:build + '/js',
+        dist:dist +'/js'
     },
     html:{
         src:src + '/html/**/*.html',
@@ -47,8 +49,8 @@ config = {
         seaJs: staticPath + '/js/core/sea',
         jquery:staticPath + '/js/core/jquery',
         avalon:staticPath + '/js/core/avalon'
-    }
-
+    },
+    seajsConfig:'seajs.config({base:"/build/js/app"});'
 }
 
 
