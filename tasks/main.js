@@ -76,12 +76,11 @@ main = {
             //判断文件更新的状态
             var e = file.event;//if e === 'change'
             try {
-                if(e !== 'undefined'){
+                if(e !== 'undefined' && e !== 'unlink'){
                     //判断是否是linux下的路径
                     var filePath = file.path.replace(/\\/g,'/');
                     //获取改变的文件的类型
                     var type = Helper.getFileType(filePath);
-                    console.log(type);
                     switch(type){
                         case 'less':
                             _self.less();
@@ -102,6 +101,8 @@ main = {
                             _self.sprite();
                             break;
                     }
+                }else{
+                    console.log('删除文件成功,如果有其他文件引用你删除的文件,请调整过来哦!');
                 }
             } catch(err){
                 //console.log(err);

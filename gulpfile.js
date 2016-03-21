@@ -32,14 +32,14 @@ gulp.task('server',function(){
 gulp.task('local',function(){
   mainBuild.less(function(){
     mainBuild.img(function(){
-      mainBuild.js(function(){
-        mainBuild.html(function(){
-          mainBuild.fonts(function(){
-            mainBuild.tpl(function(){
-              mainBuild.sprite(function(){
-                gulp.start(['watch','server']);
+      mainBuild.sprite(function(){
+        mainBuild.js(function(){
+          mainBuild.html(function(){
+            mainBuild.fonts(function(){
+              mainBuild.tpl(function(){
+                  gulp.start(['watch','server']);
               })
-            })
+            });
           });
         });
       });
