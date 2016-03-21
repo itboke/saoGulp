@@ -2,6 +2,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var less = require('gulp-less');
+var cssmin = require('gulp-minify-css');
 var log = require('gulp-util');
 var server = require('gulp-server-livereload');
 var watch = require('gulp-watch');
@@ -11,7 +12,10 @@ var html = require('./html');
 var tpl = require('./tpl');
 var sprite = require('./sprite');
 var jsCombine = require('./js');
+var image = require('./image');
 var color = log.colors;
+var rev = require('gulp-rev');
+var revCollector = require('gulp-rev-collector');
 
 main = {
 
@@ -19,15 +23,39 @@ main = {
         console.log('开始构建css!');
         var lessPath = config.less.src;
         var file = [path.join(lessPath, '*.less').replace(/\\/g,'/'),'!src/less/_**/*.less'.replace(/\\/g,'/')];
-        gulp.src(file)
-            .pipe(less({
-                compress:false,
-                paths:[lessPath]
-            }))
-            .pipe(gulp.dest(config.less.build)).on('end',function(){
-                log.log(color.red('less 已经构建成 css!'));
-                callback && callback();
-            })
+
+        var outPutEnvPath = '';
+        //判断是否是发布环节
+        if(config.env === 'test' || config.env ==='www'){
+             outPutEnvPath = config.less.dist;
+             gulp.src(file)
+                 .pipe(less({
+                    compress:false,
+                    paths:[lessPath]
+                 }))
+                 .pipe(cssmin())
+                 .pipe(rev())
+                 .pipe(gulp.dest(outPutEnvPath))
+                 .pipe(rev.manifest({
+                    merge:true
+                 }))
+                 .pipe(gulp.dest('./dist/map'))
+                 .on('end',function(){
+                    log.log(color.red('less 已经构建成 css!'));
+                    callback && callback();
+                 })
+        }else{
+            outPutEnvPath = config.less.build;
+            gulp.src(file)
+                .pipe(less({
+                    compress:false,
+                    paths:[lessPath]
+                }))
+                .pipe(gulp.dest(outPutEnvPath)).on('end',function(){
+                    log.log(color.red('less 已经构建成 css!'));
+                    callback && callback();
+                })
+        }
     },
     js:function(callback){
         console.log('开始构建js......');
@@ -58,16 +86,11 @@ main = {
     },
     img:function(callback){
         console.log('图片复制中......');
-        gulp.src(config.images.src)
-            .pipe(gulp.dest(config.images.build)).on('end',function(){
-                console.log('图片复制完成......');
-                callback && callback();
-            });
+        image(callback);
     },
     sprite:function(callback){
         console.log('构建雪碧图开始......');
         sprite(callback);
-        //callback && callback();
     },
     watch:function(){
         var _self = this;

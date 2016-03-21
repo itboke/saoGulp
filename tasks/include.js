@@ -131,7 +131,9 @@ module.exports = function(options) {
                 if(_val.indexOf('coreLibs') === 0){
                     _str += '<script src="' + config.coreJs.seaJs + '.js?t=' + cacheStr + '"></script>' + '\n';
                     _str += '<script src="' + config.coreJs.jquery + '.js?t=' + cacheStr + '"></script>' + '\n';
-                    _str += '<script src="' + config.coreJs.avalon + '.js?t=' + cacheStr + '"></script>' + '\n';
+                    if(config.isOpenAvalon){
+                        _str += '<script src="' + config.coreJs.avalon + '.js?t=' + cacheStr + '"></script>' + '\n';
+                    }
                     _str += '<script>'+ config.seajsConfig +'</script>';
                 }else{
                     var _jsPath = '';

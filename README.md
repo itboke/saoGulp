@@ -9,3 +9,5 @@ This is a saoGulp
    如果要在这两个目录/scr/less && /src/html 下建立目录 请务必以下划线开头 _xx
 
 2: other目录 是存放 一般静态资源的其他资源如 音频 或者 flash
+
+3: 当在开发环境时 初始化构建的时候 会清理一下build/html | js | img | css 的文件!
