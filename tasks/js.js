@@ -11,7 +11,6 @@ var buildJs = function(data){
   if(filePath.indexOf('/app') > -1){
       fileName = filePath.split(config.jsAppPath)[1];
       if(fileName.indexOf('/') === -1){
-        console.log(fileName);
         appJs = fileName;
         appJsPath = appJsPath + '/' + appJs;
         gulp.src(appJsPath)

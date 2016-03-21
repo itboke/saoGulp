@@ -55,6 +55,7 @@ var html = function(file,callback) {
     console.log('开始构建html......');
 
     //var hashMaps = Helper.getHashMaps();
+    //var htmlFiles = [config.html.src.replace(/\\/g,'/'),'!src/html/_**/*.html'.replace(/\\/g,'/')];
     gulp.src(config.html.src)
         .pipe(fileinclude({
           prefix: '@@',

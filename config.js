@@ -43,7 +43,7 @@ config = {
         src:src + '/sprite',
         build:'../img/sprite',
         outPutBuild:build + '/img/sprite',
-        lessOutputPath:src + '/less/sprite'
+        lessOutputPath:src + '/less/_sprite'
     },
     coreJs:{
         seaJs: staticPath + '/js/core/sea',

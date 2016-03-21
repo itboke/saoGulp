@@ -1,5 +1,3 @@
-
-
 /*构建入口*/
 var path = require('path');
 var gulp = require('gulp');
@@ -20,7 +18,7 @@ main = {
     less:function(callback){
         console.log('开始构建css!');
         var lessPath = config.less.src;
-        var file = [path.join(lessPath, '*.less'), "!" + (path.join(lessPath, '_*.less'))];
+        var file = [path.join(lessPath, '*.less').replace(/\\/g,'/'),'!src/less/_**/*.less'.replace(/\\/g,'/')];
         gulp.src(file)
             .pipe(less({
                 compress:false,
@@ -83,11 +81,6 @@ main = {
                     var filePath = file.path.replace(/\\/g,'/');
                     //获取改变的文件的类型
                     var type = Helper.getFileType(filePath);
-                    //判断字体和图片
-                    /*var imgArr = ['jpg','png','gif','svg'];
-                    if(imgArr.indexOf(type) != '-1'){
-                        type = 'img';
-                    }*/
                     console.log(type);
                     switch(type){
                         case 'less':
