@@ -17,9 +17,9 @@ var mainBuild = require('./tasks/main');
 // MD5戳
 //var rev = require('gulp-rev');
 //var revCollector = require('gulp-rev-collector');
-//var runSequence = require('run-sequence');
+var runSequence = require('run-sequence');
 
-
+var clean = require('gulp-clean');
 //监控
 gulp.task('watch',function(){
   mainBuild.watch();
@@ -47,9 +47,20 @@ gulp.task('local',function(){
   });
 });
 
+gulp.task('clean',function(done){
+  var clearDir = ['./build/img/**/*','./build/html/**/*.html','./build/js/**/*.js','./build/css/*.css'];
+  gulp.src(clearDir)
+      .pipe(clean())
+      .on('end',done);
+});
+
 gulp.task('default',function(){
   if(setting.env == 'local'){
-    gulp.start('local')
+    //gulp.start(['clean','local']);
+    runSequence([
+      'clean',
+      'local'
+    ]);
   }
 });
 
