@@ -51,7 +51,11 @@ var publish = function(callback){
   mainBuild.less(function(){
     mainBuild.js(function(){
       mainBuild.img(function(){
-        callback();
+        mainBuild.fonts(function(){
+            mainBuild.html(function(){
+                callback();
+            })
+        })
       })
     })
   });

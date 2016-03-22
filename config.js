@@ -2,6 +2,7 @@ var src = './src';
 var build = './build';
 var dist = './dist';
 var staticPath = '//localhost:8000/build';
+var publishStaticPath = '//localhost:8000/dist';
 var args = require('yargs').argv;
 var env = (ref = args.e || args.env) != null ? ref : 'local';
 config = {
@@ -9,7 +10,8 @@ config = {
     host:'localhost',
     port:'8000',
     env:env,
-    staticPath:'//localhost:8000/build',
+    staticPath: staticPath,
+    publishStaticPath : publishStaticPath,
     hashLength:'10',
     watchFiles:[src + '/less/**/*.less',src + '/js/**/*js',src + '/html/**/*.html',src + '/fonts/**/*',src + '/img/**/*',src + '/tpl/**/*.html',src + '/sprite/**/*'],
     htmlPath:'src/html/',
@@ -38,7 +40,8 @@ config = {
     },
     fonts:{
         src:src + '/fonts/**/*',
-        build:build + '/fonts'
+        build:build + '/fonts',
+        dist : dist + '/fonts'
     },
     tpl:{
         src:src + '/tpl',
@@ -54,6 +57,7 @@ config = {
         seaJs: staticPath + '/js/core/sea',
         jquery:staticPath + '/js/core/jquery',
         avalon:staticPath + '/js/core/avalon',
+        distCoreJs: publishStaticPath + '/js/',
         coreName:'coreLibs.js'
     },
     seajsConfig:'seajs.config({base:"/build/js/app"});'
