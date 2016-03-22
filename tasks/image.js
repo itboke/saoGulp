@@ -22,7 +22,7 @@ var imageBuild = function(callback){
 };
 
 var imagePublish = function(callback){
-     gulp.src(config.images.src)
+     gulp.src(config.images.build + '/**/*')
          .pipe(rev())
          .pipe(gulp.dest(config.images.dist))
          .pipe(rev.manifest({

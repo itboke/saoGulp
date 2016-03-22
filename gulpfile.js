@@ -10,6 +10,8 @@
 var gulp = require('gulp');
 var setting = require('./config');
 var mainBuild = require('./tasks/main');
+var fs = require('fs');
+var file =require('./tasks/file');
 
 // MD5戳
 //var rev = require('gulp-rev');
@@ -63,20 +65,13 @@ gulp.task('release',function(){
   })
 });
 
-
+//清理垃圾
 gulp.task('clean',function(done){
-  var rootDir = './build';
-  var clearDir = [];
   if(setting.env == 'local'){
-    rootDir = './build';
-    clearDir = [rootDir + '/img/**/*',rootDir + '/html/**/*.html',rootDir + '/js/**/*.js',rootDir + '/css/*.css'];
+    file.rmdirSync('build');
   }else{
-    rootDir = './dist';
-    clearDir = [rootDir + '/img/**/*',rootDir + '/css/*.css',rootDir + '/map/*.json',rootDir + '/js/*.js'];
+    file.rmdirSync('dist');
   }
-  gulp.src(clearDir)
-      .pipe(clean())
-      .on('end',done);
 });
 
 gulp.task('default',function(){
