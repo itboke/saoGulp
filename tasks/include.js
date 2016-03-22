@@ -143,7 +143,6 @@ module.exports = function(options) {
 
                 }else if(_val.indexOf('coreLibs') === 0 && config.env !== 'local'){
                     _str += '<script src="' + config.coreJs.distCoreJs + config.coreJs.coreName + '?t=' + cacheStr + '"></script>' + '\n';
-                    _str += '<script>'+ config.seajsConfig +'</script>';
                 }else{
                     var _jsPath = '';
                     if(_val.indexOf('_') > -1){
@@ -152,11 +151,6 @@ module.exports = function(options) {
                         _jsPath = _val;
                     }
                     //发布环节
-                    /*if(env !== 'local'){
-                        _jsPath = _jsPath.replace(/[^\/]*[\/]+/g,'');
-                        _str += '<script src="' + js_path + _jsPath + '?t=' + cacheStr + '"></script>' + '\n';
-                        return false;
-                    }*/
                     if(env !== 'local'){
                         _jsPath = _jsPath.replace(/[^\/]*[\/]+/g,'');
                     }

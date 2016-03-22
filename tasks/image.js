@@ -25,10 +25,8 @@ var imagePublish = function(callback){
      gulp.src(config.images.build + '/**/*')
          .pipe(rev())
          .pipe(gulp.dest(config.images.dist))
-         .pipe(rev.manifest({
-            merge:true
-         }))
-         .pipe(gulp.dest('./dist/map'))
+         .pipe(rev.manifest())
+         .pipe(gulp.dest('./dist/map/img'))
          .on('end',function(){
             console.log('图片复制完成......');
             callback && callback();

@@ -16,6 +16,7 @@ var image = require('./image');
 var fonts = require('./fonts');
 var color = log.colors;
 var rev = require('gulp-rev');
+var revCollector = require('gulp-rev-collector');
 
 main = {
 
@@ -36,10 +37,8 @@ main = {
                 .pipe(cssmin())
                 .pipe(rev())
                 .pipe(gulp.dest(outPutEnvPath))
-                .pipe(rev.manifest({
-                    merge: true
-                }))
-                .pipe(gulp.dest('./dist/map'))
+                .pipe(rev.manifest())
+                .pipe(gulp.dest('./dist/map/css'))
                 .on('end', function() {
                     log.log(color.red('less 已经构建成 css!'));
                     callback && callback();

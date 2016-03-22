@@ -29,21 +29,21 @@ gulp.task('server',function(){
 });
 //本地开发环境
 gulp.task('local',function(){
-  mainBuild.less(function(){
     mainBuild.img(function(){
       mainBuild.sprite(function(){
-        mainBuild.js(function(){
-          mainBuild.html(function(){
-            mainBuild.fonts(function(){
-              mainBuild.tpl(function(){
+        mainBuild.less(function(){
+          mainBuild.js(function(){
+            mainBuild.html(function(){
+              mainBuild.fonts(function(){
+                mainBuild.tpl(function(){
                   gulp.start(['watch','server']);
-              })
+                })
+              });
             });
           });
         });
       });
     });
-  });
 });
 //打包 压缩 资源整合
 
@@ -52,12 +52,12 @@ var publish = function(callback){
     mainBuild.js(function(){
       mainBuild.img(function(){
         mainBuild.fonts(function(){
-            mainBuild.html(function(){
-                callback();
-            })
-        })
-      })
-    })
+          mainBuild.html(function(){
+              callback();
+          });
+        });
+      });
+    });
   });
 };
 

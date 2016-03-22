@@ -76,13 +76,21 @@ var html2build =function(callback){
         });
 };
 var html2dist = function(callback){
-    gulp.src(['./dist/map/rev-manifest.json','./src/html/*.html'])
+    gulp.src(['./dist/map/**/*.json','./src/html/*.html'])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
         }))
         .pipe(revCollector())
-        .pipe(gulp.dest('dist/html'));
+        .pipe(gulp.dest('dist/html'))
+        .on('end',function(){
+
+            console.log('/*替换发布环境下的CSS背景图*/');
+            gulp.src(['./dist/map/img/*.json','./dist/css/*.css'])
+                .pipe(revCollector())
+                .pipe(gulp.dest('dist/css'));
+
+        })
 };
 
 module.exports = html;

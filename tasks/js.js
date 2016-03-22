@@ -8,17 +8,15 @@ var uglify = require('gulp-uglify');
 var config = require('../config');
 
 /*合并依赖js并压缩*/
-var buildJs = function(data,callback){
-    var filePath = String(data.path).replace(/\\/g,'/');
-    gulp.src(filePath)
+var buildJs = function(callback){
+
+    gulp.src('./src/js/app/*.js')
         .pipe(jsPack())
         .pipe(uglify())
         .pipe(rev())
         .pipe(gulp.dest(config.js.dist))
-        .pipe(rev.manifest({
-            merge:true
-        }))
-        .pipe(gulp.dest('./dist/map'))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('./dist/map/js'))
         .on('end',callback);
     console.log('js构建完成!!!!!!');
 };
@@ -45,15 +43,11 @@ var jsPublish = function(callback){
         .pipe(uglify())
         .pipe(rev())
         .pipe(gulp.dest(config.js.dist))
-        .pipe(rev.manifest({
-            merge:true
-        }))
-        .pipe(gulp.dest('./dist/map'));
-
-    gulp.src('./src/js/app/*.js')
-        .on('data',function(data){
-          buildJs(data,callback);
-        });
+        .pipe(rev.manifest('coreJs.json'))
+        .pipe(gulp.dest('./dist/map/'))
+        .on('end',function(){
+            buildJs(callback);
+        })
 };
 
 module.exports = jsCombine;
