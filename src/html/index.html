@@ -1,21 +1,130 @@
 <!DOCTYPE html>
 <html>
-@@include("./_common/header.html",{
-    "title":"我一直在路上",
-    "css":"index.css",
-    "js":"coreLibs.js,app_index.js"
-})
-@@css
+@@include("./_common/header.html",{ "title":"首页", "css":"index.css", "js":"coreLibs.js,app_index.js" }) @@css
+
 <body>
-    <h1>hello world</h1>
-    <h2>hello gulp</h2>
-    <h3>hello gohhhhh</h3>
-    <div class="img">
-        <img src="../img/dddd.jpg" alt="">
-    </div>
-    <div class="demo-back">
-        我在做gulp,真的吗？
+    <div id="page" class="site">
+        <header id="masthead" class="site-header" role="banner">
+            <div class="header-main">
+                <h1 class="site-title"><a href="" rel="home">helloworld</a></h1>
+                <div class="search-toggle">
+                    <a href="#search-container" class="screen-reader-text" aria-expanded="false" aria-controls="search-container">搜索</a>
+                </div>
+            </div>
+            <div id="search-container" class="search-box-wrapper hide">
+                <div class="search-box">
+                    <form role="search" method="get" class="search-form" action="">
+                        <label>
+                            <input type="search" class="search-field" placeholder="搜索…" value="" name="s" title="搜索：">
+                        </label>
+                        <input type="submit" class="search-submit" value="搜索">
+                    </form>
+                </div>
+            </div>
+        </header>
+        <div class="site-main">
+            <div id="main-content" class="main-content">
+                <div class="content-area">
+                    <div id="content" class="site-content" role="main">
+                        <article id="" class="hentry">
+                            <header class="entry-header">
+                                <h1 class="entry-title">
+                                    <a href="" rel="bookmark">所以，知道这个道理，知道上师是诸佛的慈悲化现</a>
+                                </h1>
+                                <div class="entry-meta">
+                                    <span class="entry-date">
+                                        <time class="entry-date">2016年4月26日</time>
+                                    </span>
+                                </div>
+                            </header>
+                        </article>
+                        <article id="" class="hentry">
+                            <header class="entry-header">
+                                <h1 class="entry-title">
+                                    <a href="" rel="bookmark">所以，知道这个道理，知道上师是诸佛的慈悲化现</a>
+                                </h1>
+                                <div class="entry-meta">
+                                    <span class="entry-date">
+                                        <time class="entry-date">2016年4月26日</time>
+                                    </span>
+                                </div>
+                            </header>
+                        </article>
+                    </div>
+                </div>
+                <div class="content-area">
+                    <ul id="content" class="site-content" role="main">
+                        <li class="hentry hentry-soft">
+                            <div><a class="post-thumbnail">
+                                <img src="http://dwz.cn/3u0MCQ">
+                            </a></div>
+                            <header class="entry-header entry-soft">
+                                <h3 class="entry-title">
+                                    <a href="" rel="bookmark">腾讯管家</a>
+                                </h3>
+                            </header>
+                        </li>
+                        <li class="hentry hentry-soft">
+                            <div><a class="post-thumbnail">
+                                <img src="http://dwz.cn/3u0MCQ">
+                            </a></div>
+                            <header class="entry-header entry-soft">
+                                <h3 class="entry-title">
+                                    <a href="" rel="bookmark">腾讯管家</a>
+                                </h3>
+                            </header>
+                        </li>
+                        <li class="hentry hentry-soft">
+                            <div><a class="post-thumbnail">
+                                <img src="http://dwz.cn/3u0MCQ">
+                            </a></div>
+                            <header class="entry-header entry-soft">
+                                <h3 class="entry-title">
+                                    <a href="" rel="bookmark">腾讯管家</a>
+                                </h3>
+                            </header>
+                        </li>
+                        <li class="hentry hentry-soft">
+                            <div><a class="post-thumbnail">
+                                <img src="http://dwz.cn/3u0MCQ">
+                            </a></div>
+                            <header class="entry-header entry-soft">
+                                <h3 class="entry-title">
+                                    <a href="" rel="bookmark">腾讯管家</a>
+                                </h3>
+                            </header>
+                        </li>
+                        <li class="hentry hentry-soft">
+                            <div><a class="post-thumbnail">
+                                <img src="http://dwz.cn/3u0MCQ">
+                            </a></div>
+                            <header class="entry-header entry-soft">
+                                <h3 class="entry-title">
+                                    <a href="" rel="bookmark">腾讯管家</a>
+                                </h3>
+                            </header>
+                        </li>
+                        <li class="hentry hentry-soft">
+                            <div><a class="post-thumbnail">
+                                <img src="http://dwz.cn/3u0MCQ">
+                            </a></div>
+                            <header class="entry-header entry-soft">
+                                <h3 class="entry-title">
+                                    <a href="" rel="bookmark">腾讯管家</a>
+                                </h3>
+                            </header>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="site-info">
+                <a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+            </div>
+        </footer>
     </div>
     @@js
 </body>
+
 </html>

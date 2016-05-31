@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+@@include("./_common/header.html",{ "title":"首页", "css":"index.css", "js":"coreLibs.js,app_index.js" }) @@css
+
+<body>
+    <div id="page" class="site">
+        <header id="masthead" class="site-header" role="banner">
+            <div class="header-main">
+                <h1 class="site-title"><a href="" rel="home">helloworld</a></h1>
+                <div class="search-toggle">
+                    <a href="#search-container" class="screen-reader-text" aria-expanded="false" aria-controls="search-container">搜索</a>
+                </div>
+            </div>
+            <div id="search-container" class="search-box-wrapper hide">
+                <div class="search-box">
+                    <form role="search" method="get" class="search-form" action="">
+                        <label>
+                            <input type="search" class="search-field" placeholder="搜索…" value="" name="s" title="搜索：">
+                        </label>
+                        <input type="submit" class="search-submit" value="搜索">
+                    </form>
+                </div>
+            </div>
+        </header>
+        <div class="baifo">
+            <div class="pusa">
+                <img src="../img/pusa.jpg">
+            </div>
+            <div class="desk clearfix">
+                <img src="../img/fo_bg_bl.jpg" class="bl">
+                <img src="../img/fo_gp_xiang.gif" class="xiang">
+                <img src="../img/fo_bg_br.jpg" class="br">
+            </div>
+        </div>
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="site-info">
+                <a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+            </div>
+        </footer>
+    </div>
+    @@js
+</body>
+
+</html>

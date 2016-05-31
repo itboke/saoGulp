@@ -1,9 +1,147 @@
-h1{
-    color:#eee;
-    font-size: 12px;
+@import './_common/reset';
+a {
+    color: #fff;
 }
-@import './_user/user';
-@import './_sprite/demo';
-.demo-back{
-    .icon-2595();
+ul,li{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+    border:none;
+}
+.hide {
+    display: none;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.site-header {
+    background-color: #000;
+    max-width: 750px;
+    position: relative;
+    width: 100%;
+    z-index: 4;
+    .header-main {
+        min-height: 48px;
+        padding: 0 10px;
+    }
+    .site-title {
+        float: left;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 48px;
+        margin: 0;
+    }
+    .search-toggle {
+        background-color: #24890d;
+        cursor: pointer;
+        float: right;
+        height: 48px;
+        margin-right: 38px;
+        text-align: center;
+        width: 48px;
+        a {
+            line-height: 48px;
+        }
+    }
+    .search-box-wrapper {
+        box-sizing: border-box;
+        position: absolute;
+        top: 48px;
+        right: 0;
+        width: 100%;
+        z-index: 2;
+        .search-box {
+            background-color: #41a62a;
+            padding: 12px;
+            .search-field {
+                background-color: #fff;
+                border: 0;
+                float: left;
+                font-size: 16px;
+                padding: 2px 2px 3px 6px;
+                width: 80%;
+            }
+            .search-submit {
+                height: 25px;
+                width: 50px;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+.content-area{
+    padding: 0 10px;
+}
+.site-content {
+    .hentry {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 0;
+        padding: 12px 0 9px;
+        .entry-title{
+            clear: none;
+            font-size: 0.15rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            text-transform: none;
+            a{
+                color: #2b2b2b;
+            }
+
+        }
+        .entry-meta{
+            time{
+                color:#767676;
+            }
+        }
+        .post-thumbnail{
+            img{
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+        .entry-soft{
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    .hentry-soft{
+        float: left;
+        width: 33%;
+        text-align: center;
+        border-bottom: none;
+    }
+}
+
+/*拜佛*/
+.baifo{
+    height: 600px;
+    background:data-uri('../img/fo_bg.jpg') repeat;
+    .pusa{
+        text-align: center;
+        img{
+            width: 3.72rem;
+            height: 4.635rem;
+        }
+    }
+    .desk{
+        margin: auto;
+        width: 5.66rem;
+        .bl,.br{
+            float: left;
+            width: 2.24rem;
+            height: 1.59rem;
+        }
+        .xiang{
+            float: left;
+            width: 1.18rem;
+            height: 1.59rem;
+        }
+    }
 }

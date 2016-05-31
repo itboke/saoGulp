@@ -2,4 +2,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>@@title</title>
+    <script>
+    (function(doc, win) {
+        var doc = document;
+        var win = window;
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var recalc = function() {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            var fZ = 100 * (clientWidth / 750);
+            if (fZ >= 100) {
+                docEl.style.fontSize = 100 + 'px';
+            } else if (fZ <= 42) {
+                docEl.style.fontSize = 42 + 'px';
+            } else {
+                docEl.style.fontSize = fZ + 'px';
+            }
+        };
+        recalc();
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
 </head>

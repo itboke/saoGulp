@@ -1,0 +1,139 @@
+/*------------------------------------------------
+@Filename:  reset.less
+@Description:   全局重置代码
+@Version:   1.0.0(2015-11-13)
+@author:    LJL
+@updatatime:
+------------------------------------------------*/
+@charset"utf-8";
+ html {
+    overflow-y:scroll
+}
+html * {
+    outline:0;
+    -webkit-text-size-adjust:none;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0)
+}
+html {
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+html,body {
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+    font-size: .18rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased; /* 让页面里的字体变清晰 抗锯齿 灰度平滑 */
+    background: #fff;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin:0;
+    padding:0
+}
+input, select, textarea {
+    font-size:100%
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0
+}
+fieldset, img {
+    border:0
+}
+abbr, acronym {
+    border:0;
+    font-variant:normal
+}
+del {
+    text-decoration:line-through
+}
+address, caption, cite, code, dfn, em, th, var {
+    font-style:normal;
+    font-weight:400
+}
+ol, ul {
+    list-style:none
+}
+caption, th {
+    text-align:left
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size:100%;
+    font-weight:400
+}
+q:before, q:after {
+    content:''
+}
+sub, sup {
+    font-size:75%;
+    line-height:0;
+    position:relative;
+    vertical-align:baseline
+}
+sup {
+    top:-.5em
+}
+sub {
+    bottom:-.25em
+}
+a:hover {
+    text-decoration:none;
+}
+ins, a {
+    text-decoration:none;
+}
+
+input,textarea{-webkit-appearance: none;}  //去除input和textarea添加了内部阴影
+:not(input) {
+    //-webkit-user-select: none;  //用户不能选择元素中的任何内容
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    //-webkit-touch-callout:none;
+    /*-webkit-touch-callout 是一个 不规范的属性（unsupported WebKit property）
+    当你触摸并按住触摸目标时候，禁止或显示系统默认菜单。在iOS上，当你触摸并按住触摸的目标，比如一个链接，Safari浏览器将显示链接有关的系统默认菜单。这个属性可以让你禁用系统默认菜单。*/
+    -webkit-text-size-adjust: none;
+}
+textarea{
+    -webkit-user-select: text;//如果设置为none 会导致iphone(或者其他)一些手机下不能编辑
+}
+
+/* 移除HTML5 input在type="number"时的上下小箭头 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+.bgwhite{
+    background: #fff;
+}
+
+.hidden {
+    display: none!important;
+    visibility: hidden!important
+}
+// clearfix
+.clearfix{*zoom:1}
+.clearfix:after{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    font-size:0;
+}
+// 省略号
+.single-ellipsis{
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container{
+    width: 980px;
+    margin:auto;
+}

@@ -131,7 +131,7 @@ main = {
         gulp.src(root).pipe(server({
             livereload: false,
             directoryListing: true,
-            open: false,
+            open: true,
             host: config.host,
             port: config.port
         }));
