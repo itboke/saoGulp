@@ -32,7 +32,12 @@ module.exports = function(options) {
     }
     // console.log(hashmap);
     var env = config.env;
-    var staticPath = config.staticPath;
+    var staticPath = '';
+    if(env === 'local'){
+        staticPath = config.staticPath;
+    }else{
+        staticPath = config.publishStaticPath;
+    }
     var js_path = staticPath + '/js/';
     var css_path = staticPath + '/css/';
     var hashLen = config.hashLength;
@@ -128,16 +133,26 @@ module.exports = function(options) {
                     _name = _val + "?v=" + cacheStr;
                 }
                 //如果是核心JS模块
-                if(_val.indexOf('coreLibs') === 0){
+                if(_val.indexOf('coreLibs') === 0 && config.env === 'local'){
                     _str += '<script src="' + config.coreJs.seaJs + '.js?t=' + cacheStr + '"></script>' + '\n';
                     _str += '<script src="' + config.coreJs.jquery + '.js?t=' + cacheStr + '"></script>' + '\n';
-                    _str += '<script src="' + config.coreJs.avalon + '.js?t=' + cacheStr + '"></script>' + '\n';
+                    if(config.isOpenAvalon){
+                        _str += '<script src="' + config.coreJs.avalon + '.js?t=' + cacheStr + '"></script>' + '\n';
+                    }
+                    _str += '<script>'+ config.seajsConfig +'</script>';
+
+                }else if(_val.indexOf('coreLibs') === 0 && config.env !== 'local'){
+                    _str += '<script src="' + config.coreJs.distCoreJs + config.coreJs.coreName + '?t=' + cacheStr + '"></script>' + '\n';
                 }else{
                     var _jsPath = '';
                     if(_val.indexOf('_') > -1){
                         _jsPath = _val.split('_').join('/').substr(0);
                     }else{
                         _jsPath = _val;
+                    }
+                    //发布环节
+                    if(env !== 'local'){
+                        _jsPath = _jsPath.replace(/[^\/]*[\/]+/g,'');
                     }
                     _str += '<script src="' + js_path + _jsPath + '?t=' + cacheStr + '"></script>' + '\n';
                 }
