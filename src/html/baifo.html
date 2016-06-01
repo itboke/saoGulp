@@ -5,18 +5,18 @@
 
 <body>
     <div id="page" class="site">
-        <header id="masthead" class="site-header" role="banner">
+        <header class="header">
             <div class="header-main">
                 <h1 class="site-title"><a href="" rel="home">helloworld</a></h1>
                 <div class="search-toggle">
-                    <a href="#search-container" class="screen-reader-text" aria-expanded="false" aria-controls="search-container">搜索</a>
+                    <a href="javascript:void(0);" class="screen-reader-text">搜索</a>
                 </div>
             </div>
             <div id="search-container" class="search-box-wrapper hide">
                 <div class="search-box">
                     <form role="search" method="get" class="search-form" action="">
                         <label>
-                            <input type="search" class="search-field" placeholder="搜索…" value="" name="s" title="搜索：">
+                            <input type="search" class="search-field" placeholder="请输入内容…" value="" name="s" title="搜索内容：">
                         </label>
                         <input type="submit" class="search-submit" value="搜索">
                     </form>
@@ -27,17 +27,20 @@
             <div class="pusa">
                 <img src="../img/pusa.jpg">
             </div>
-            <div class="desk clearfix">
-                <img src="../img/fo_bg_bl.jpg" class="bl">
-                <img src="../img/fo_gp_xiang.gif" class="xiang">
-                <img src="../img/fo_bg_br.jpg" class="br">
+            <div class="desk">
+                <ul>
+                    <li><img src="../img/fo_bg_bl.jpg" alt=""></li>
+                    <li><img src="../img/fo_gp_xiang.gif" class="xiang"></li>
+                    <li><img src="../img/fo_bg_br.jpg" alt=""></li>
+                </ul>
+            </div>
+            <div class="gongpin">
+                <ul>
+                    <li><img src="../img/fo_b_flower.jpg"></li>
+                    <li><img src="../img/fo_b_fruit.jpg"></li>
+                </ul>
             </div>
         </div>
-        <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="site-info">
-                <a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
-            </div>
-        </footer>
     </div>
     @@js
 </body>
