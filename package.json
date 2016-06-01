@@ -22,6 +22,7 @@
     "concat-stream": "^1.5.1",
     "event-stream": "^3.3.2",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-cmd-pack": "^1.0.6",
     "gulp-concat": "^2.6.0",
     "gulp-cssshrink": "^0.1.6",

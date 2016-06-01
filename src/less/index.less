@@ -1,9 +1,398 @@
-h1{
-    color:#eee;
-    font-size: 12px;
+@import './_common/reset';
+a {
+    color: #fff;
+    text-decoration: none;
 }
-@import './_user/user';
-@import './_sprite/demo';
-.demo-back{
-    .icon-2595();
+ul,li{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+    border:none;
+}
+html,body{
+    height: 100%;
+    background-color: #e8e7e2;
+}
+.container{
+    min-width:3.2rem;
+    max-width:7.5rem;
+    margin:auto;
+}
+.site{
+    height: 100%;
+}
+.hide {
+    display: none;
+}
+.clearfix{
+    zoom:1;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+/*头部*/
+.header {
+    background-color: #000;
+    max-width: 750px;
+    position: relative;
+    width: 100%;
+    z-index: 4;
+    .header-main {
+        height: 0.9rem;
+        padding: 0 10px;
+    }
+    .site-title {
+        float: left;
+        font-size: 0.32rem;
+        font-weight: 700;
+        line-height: 0.9rem;
+        margin: 0;
+    }
+    .search-toggle {
+        background-color: #24890d;
+        cursor: pointer;
+        float: right;
+        height: 0.9rem;
+        margin-right: 0.5rem;
+        text-align: center;
+        width: 0.9rem;
+        a {
+            line-height: 0.9rem;
+        }
+    }
+    .search-box-wrapper {
+        box-sizing: border-box;
+        position: absolute;
+        top: 0.9rem;
+        right: 0;
+        width: 100%;
+        z-index: 2;
+        .search-box {
+            background-color: #41a62a;
+            padding: 0.24rem;
+            .search-field {
+                background-color: #fff;
+                border: 0;
+                float: left;
+                font-size: 0.18rem;
+                line-height: 0.5rem;
+                padding: 2px 2px 3px 6px;
+                width: 75%;
+            }
+            .search-submit {
+                height: 0.6rem;
+                width: 1.2rem;
+                margin-left: 0.2rem;
+            }
+        }
+    }
+}
+/*活动模块*/
+.active-theme{
+    h3{
+        padding-left: 0.25rem;
+        font-size: 0.28rem;
+        line-height: 0.8rem;
+        color:#ff6633;
+        font-weight: bold;
+        background-color: #f5f5f5;
+    }
+}
+.active{
+    padding: 0.2rem 0.25rem;
+    background-color: #fff;
+    li{
+        padding-top: 0.12rem;
+        padding-bottom: 0.06rem;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    li:last-child{
+        border-bottom: none;
+    }
+    h3{
+        a{
+            display: block;
+            font-size: 0.28rem;
+            color:#333;
+            height: 0.5rem;
+            line-height: 0.5rem;
+            overflow: hidden;
+            &:hover,&:active{
+                color:#e23a0a;
+            }
+        }
+    }
+    .meta{
+        time{
+            color:#666;
+        }
+    }
+}
+/*软件下载*/
+.download{
+    margin-top: 0.25rem;
+    background-color: #fff;
+    ul{
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+        flex-wrap:wrap;
+        padding: 0.2rem 0.25rem;
+        li{
+            width: 33%;
+            text-align: center;
+            img{
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 0.16rem;
+            }
+            .entry-title{
+                a{
+                    display: block;
+                    padding: 0.16rem 0rem;
+                    font-size: 0.24rem;
+                    color: #666;
+                }
+            }
+        }
+    }
+}
+/*佛学*/
+.foxue{
+    .title{
+        h3{
+            padding-left: 0.25rem;
+            font-size: 0.28rem;
+            line-height: 0.8rem;
+            color:#24890d;
+            font-weight: bold;
+        }
+    }
+    .category{
+        padding: 0.2rem 0.25rem;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction:row;
+        justify-content: center;
+        color:#fff;
+        background-color: #fff;
+        div{
+            margin:0 0.05rem;
+            width: 25%;
+            text-align: center;
+            a{
+                display: block;
+                padding: 0.16rem 0.32rem;
+            }
+        }
+        .c1{
+            background-color: #47addc;
+        }
+        .c2{
+            background-color:#5ec857;
+        }
+        .c3{
+            background-color:#df3031;
+        }
+        .c4{
+            background-color:#ff5e32;
+        }
+    }
+    .topic{
+        padding: 0.2rem 0.25rem;
+        background-color: #fff;
+        li{
+            border-bottom: 1px solid #e6e6e6;
+        }
+        li:last-child{
+            border-bottom: none;
+        }
+        a{
+            display: inline-block;
+            margin-left: 0.25rem;
+            line-height: 0.8rem;
+            font-size: 0.26rem;
+            color:#666;
+            &:hover,&:active{
+                color:#e23a0a;
+            }
+        }
+        span{
+            padding: 0.08rem 0.16rem;
+            color:#fff;
+            line-height: 0.7rem;
+            background-color: #53b856;
+        }
+    }
+}
+/*页脚*/
+.footer{
+    margin-top: 0.3rem;
+    padding: 0.2rem 0.25rem;
+    height:1.2rem;
+    background-color: #383838;
+    p{
+        color:#fff;
+        text-align: center;
+    }
+}
+/*拜佛*/
+.baifo{
+    height: 100%;
+    background:data-uri('../img/fo_bg.jpg') repeat;
+    .pusa{
+        text-align: center;
+        img{
+            width: 3.72rem;
+            height: 4.635rem;
+        }
+    }
+    .desk{
+        margin: auto;
+        width: 5.66rem;
+        li:first-child,
+        li:last-child{
+            img{
+                width: 2.24rem;
+                height: 1.59rem;
+            }
+        }
+        .xiang{
+            width: 1.18rem;
+            height: 1.59rem;
+        }
+        ul{
+            display: -webkit-flex; /* Safari */
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .gongpin{
+        margin-top: 0.8rem;
+        ul{
+            display: -webkit-flex; /* Safari */
+            display: flex;
+            justify-content: center;
+        }
+        li{
+            margin: 0 0.2rem;
+            img{
+                width: 1.66rem;
+                height: 1.28rem;
+            }
+        }
+    }
+}
+/*文章页*/
+.single{
+    background-color: #e8e7e2;
+    .single-inner{
+        padding: 0.2rem 0.25rem;
+        h3.category{
+            line-height: 0.56rem;
+             a{
+                font-size: 0.3rem;
+                color:#666;
+            }
+        }
+        .time{
+            text-align:center;
+            color:#999;
+        }
+        .title{
+            margin:0.5rem 0rem;
+            font-size: 0.38rem;
+            color:#e36c09;
+            text-align: center;
+        }
+        article{
+            p{
+                margin: 0.2rem 0rem;
+                line-height: 0.5rem;
+                text-indent: 0.5rem;
+                font-size: 0.32rem;
+                color:#555;
+                text-align: justify;
+            }
+        }
+    }
+}
+/*手机软件下载列表*/
+.download-list{
+    .title{
+        h3{
+            padding-left: 0.25rem;
+            font-size: 0.28rem;
+            line-height: 0.8rem;
+            color:#ff6633;
+            font-weight: bold;
+        }
+    }
+    .list-inner{
+        padding: 0rem 0.25rem 0.2rem 0.25rem;
+        li{
+            margin-top: 0.2rem;
+            padding: 0.12rem 0.24rem;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            display: -webkit-flex;
+            display: flex;
+            img{
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 0.08rem;
+            }
+            .entry-title{
+                margin-left: 0.25rem;
+                color:#666;
+                p{
+                    line-height: 0.5rem;
+                    span{
+                        margin-right: 0.1rem;
+                        color:#e23a0a;
+                    }
+                }
+            }
+        }
+        li:first-child{
+            margin-top: 0;
+        }
+    }
+}
+/*文章目录列表*/
+.active-list{
+    padding-bottom:1.6rem;
+    .title{
+        h3{
+            padding-left: 0.25rem;
+            font-size: 0.28rem;
+            line-height: 0.8rem;
+            color:#ff6633;
+            font-weight: bold;
+        }
+    }
+    .list-inner{
+        padding: 0rem 0.25rem 0.2rem 0.25rem;
+        li{
+            padding: 0.12rem 0.24rem;
+            background-color: #fff;
+            border-bottom:1px dotted #ddd;
+            a{
+                color:#666;
+            }
+            span{
+                float:right;
+                color:#e23a0a;
+            }
+        }
+        li:first-child{
+            margin-top: 0;
+        }
+    }
 }

@@ -1,21 +1,143 @@
 <!DOCTYPE html>
 <html>
-@@include("./_common/header.html",{
-    "title":"我一直在路上",
-    "css":"index.css",
-    "js":"coreLibs.js,app_index.js"
-})
-@@css
+@@include("./_common/header.html",{ "title":"首页", "css":"index.css", "js":"app_index.js" }) @@css
+
 <body>
-    <h1>hello world</h1>
-    <h2>hello gulp</h2>
-    <h3>hello gohhhhh</h3>
-    <div class="img">
-        <img src="../img/dddd.jpg" alt="">
-    </div>
-    <div class="demo-back">
-        我在做gulp,真的吗？
+    <div id="page" class="site container">
+        <header class="header">
+            <div class="header-main">
+                <h1 class="site-title"><a href="">helloworld</a></h1>
+                <div class="search-toggle">
+                    <a href="javascript:void(0);" class="screen-reader-text">搜索</a>
+                </div>
+            </div>
+            <div id="search-container" class="search-box-wrapper hide">
+                <div class="search-box">
+                    <form role="search" method="get" class="search-form" action="">
+                        <label>
+                            <input type="search" class="search-field" placeholder="请输入内容…" value="" name="s" title="搜索内容：">
+                        </label>
+                        <input type="submit" class="search-submit" value="搜索">
+                    </form>
+                </div>
+            </div>
+        </header>
+        <!-- 活动模块 -->
+        <div class="active-theme">
+            <h3>活动专题</h3>
+        </div>
+        <div class="active">
+            <ul>
+                <li>
+                    <h3>
+                        <a href="">所以，知道这个道理，知道上师是诸佛的慈悲化现</a>
+                    </h3>
+                    <div class="meta">
+                        <time class="entry-date">2016年4月26日</time>
+                    </div>
+                </li>
+                <li>
+                    <h3>
+                        <a href="">所以，知道这个道理，知道上师是诸佛的慈悲化现</a>
+                    </h3>
+                    <div class="meta">
+                        <time class="entry-date">2016年4月26日</time>
+                    </div>
+                </li>
+                <li>
+                    <h3>
+                        <a href="">所以，知道这个道理，知道上师是诸佛的慈悲化现</a>
+                    </h3>
+                    <div class="meta">
+                        <time class="entry-date">2016年4月26日</time>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 下载模块 -->
+        <section class="download">
+            <ul class="download-inner">
+                <li>
+                    <div><a>
+                        <img src="http://dwz.cn/3u0MCQ">
+                    </a></div>
+                    <h3 class="entry-title">
+                        <a href="">腾讯管家</a>
+                    </h3>
+                </li>
+                <li>
+                    <div><a>
+                        <img src="http://dwz.cn/3u0MCQ">
+                    </a></div>
+                    <h3 class="entry-title">
+                        <a href="">腾讯管家</a>
+                    </h3>
+                </li>
+                <li>
+                    <div><a>
+                        <img src="http://dwz.cn/3u0MCQ">
+                    </a></div>
+                    <h3 class="entry-title">
+                        <a href="">腾讯管家</a>
+                    </h3>
+                </li>
+                <li>
+                    <div><a>
+                        <img src="http://dwz.cn/3u0MCQ">
+                    </a></div>
+                    <h3 class="entry-title">
+                        <a href="">腾讯管家</a>
+                    </h3>
+                </li>
+                <li>
+                    <div><a>
+                        <img src="http://dwz.cn/3u0MCQ">
+                    </a></div>
+                    <h3 class="entry-title">
+                        <a href="">腾讯管家</a>
+                    </h3>
+                </li>
+                <li>
+                    <div><a>
+                        <img src="http://dwz.cn/3u0MCQ">
+                    </a></div>
+                    <h3 class="entry-title">
+                        <a href="">腾讯管家</a>
+                    </h3>
+                </li>
+            </ul>
+        </section>
+        <!-- 佛学文集模块 -->
+        <section class="foxue">
+            <div class="title">
+                <h3>佛学文集</h3>
+            </div>
+            <!-- 文集归档 -->
+            <div class="category">
+                <div class="c1"><a href="">金刚经</a></div>
+                <div class="c2"><a href="">禅机故事</a></div>
+                <div class="c3"><a href="">心经</a></div>
+                <div class="c4"><a href="">一日禅</a></div>
+            </div>
+            <div class="topic">
+                <ul>
+                    <li><span>金刚经</span></a><a href="/single.html">金刚经第一章</a></li>
+                    <li><span>金刚经</span><a href="/single.html">金刚经第二章</a></li>
+                    <li><span>金刚经</span><a href="/single.html">金刚经第三章</a></li>
+                    <li><span>金刚经</span><a href="/single.html">金刚经第四章</a></li>
+                    <li><span>金刚经</span><a href="/single.html">金刚经第五章</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>
+                郑重声明：本站所有活动和资源均收集于互联网，如有侵权请联系本站删除处理
+            </p>
+            <p>联系邮箱:953846569@qq.com</p>
+        </footer>
     </div>
     @@js
 </body>
+
 </html>

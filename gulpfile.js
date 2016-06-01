@@ -18,6 +18,7 @@ var file =require('./tasks/file');
 //var revCollector = require('gulp-rev-collector');
 var runSequence = require('run-sequence');
 
+var clean = require('gulp-clean');
 //监控
 gulp.task('watch',function(){
   mainBuild.watch();
