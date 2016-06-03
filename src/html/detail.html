@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+@@include("./_common/header.html",{ "title":"首页", "css":"index.css", "js":"app_index.js" }) @@css
+
+<body>
+    <div id="page" class="site container">
+        <header class="header">
+            <div class="header-main">
+                <h1 class="site-title"><a href="" rel="home">helloworld</a></h1>
+                <div class="search-toggle">
+                    <a href="javascript:void(0);" class="screen-reader-text">搜索</a>
+                </div>
+            </div>
+            <div id="search-container" class="search-box-wrapper hide">
+                <div class="search-box">
+                    <form role="search" method="get" class="search-form" action="">
+                        <label>
+                            <input type="search" class="search-field" placeholder="请输入内容…" value="" name="s" title="搜索内容：">
+                        </label>
+                        <input type="submit" class="search-submit" value="搜索">
+                    </form>
+                </div>
+            </div>
+        </header>
+        <!-- 详情页 -->
+        <section class="active-list">
+            <div class="title">
+                <h3>百度云管家</h3>
+            </div>
+            <div class="detail">
+                <div class="meta">
+                    <div><img src="" alt=""></div>
+                    <div>
+                        <p class="title">百度云管家</p>
+                        <p class="desc">一个好用的工具</p>
+                        <p>免费 性感</p>
+                    </div>
+                </div>
+                <div class="down"><a href="">去下载</a></div>
+                <div class="content">
+                    <strong>详情介绍<strong>
+                    <p>Android平台上最强的中文输入法工具，手机必备输入工具之一，全面支持拼音、五笔、笔划、手写、语音等输入方式。启用了全新的界面和输入方式，效率更高、使用更流畅！</p>
+                    <p>输入方式多样：支持全拼、双拼、笔画、五笔、英文、手写等多种输入方式，满足不同用户输入习惯；</p>
+                    <p>词库精准：精准、全面、持续优化，并提供多重词库优化和个性适配功能；</p>
+                    <p>多彩皮肤：个性化主题，丰富的皮肤定制功能；</p>
+                    <p>高效内核：高性能的手机输入法内核，保证输入流畅快捷。</p>
+                </div>
+            </div>
+        </section>
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>
+                郑重声明：本站所有活动和资源均收集于互联网，如有侵权请联系本站删除处理
+            </p>
+            <p>联系邮箱:953846569@qq.com</p>
+        </footer>
+    </div>
+    @@js
+</body>
+
+</html>
