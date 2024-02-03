@@ -1,6 +1,7 @@
 var src = './src';
 var build = './build';
 var dist = './dist';
+// ceshi 
 var staticPath = '//localhost:8000/build';
 var publishStaticPath = '//localhost:8000/dist';
 var args = require('yargs').argv;
